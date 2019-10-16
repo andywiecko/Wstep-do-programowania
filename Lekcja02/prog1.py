@@ -25,7 +25,6 @@ kolor = 'zielony'
 def main():
     global kolor
     kolor = input("Jaki jest Twój ulubiony kolor?")
-    return kolor
 
 
 print("kolor="+kolor)
