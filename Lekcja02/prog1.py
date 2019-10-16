@@ -25,7 +25,7 @@ kolor = 'zielony'
 def main():
     global kolor
     kolor = input("Jaki jest Twój ulubiony kolor?")
-
+    # [!] brak slowa `return` - funkcja nie musi cos zwracac (odpowiednik typu `void` z jezykow C/C++)
 
 print("kolor="+kolor)
 main()
