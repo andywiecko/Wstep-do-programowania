@@ -4,12 +4,13 @@
 # output:
 #   - liczba rozwiązań (x\in R)
 # szkic:
-#  1. delta = b**2 - 4*a*c
-#  2. sprawdź wartość delty
-#  3.a delta<0 -> rozwiazania zespolone -> brak rozwiazań
-#  3.b delta>0 -> 2 rozwiazania -> podaj rozwiazania
-#  3.c delta=0 -> 1 rozwiazanie
-#  3.d a=b=c=0 -> oo wiele rozwiazan
+#  1. a==0 -> funkcja liniowa
+#  2. delta = b**2 - 4*a*c
+#  3. sprawdź wartość delty
+#  4.a delta<0 -> rozwiazania zespolone -> brak rozwiazań
+#  4.b delta>0 -> 2 rozwiazania -> podaj rozwiazania
+#  4.c delta=0 -> 1 rozwiazanie
+#  4.d a=b=c=0 -> oo wiele rozwiazan
 
 # funkcja lambda f
 # zwraca wartosc wyrazenia: a*x**2+b*x+c
@@ -29,6 +30,22 @@ def Sprawdzam(x,a,b,c):
     if y==0.0: print("x0 to miejsce zerowe!")
     else: print("Upps... x0 to NIE jest miejsce zerowe!")
 
+# b*x+c
+def FunkcjaLiniowa(b,c):
+    if b==c==0:
+        print ("oo wiele rozwiązań!")
+    elif b!=0:
+        print ("1 rozwiązanie!")
+        # liczymy rozwiązanie ze wzoru
+        x1 = -c/b
+        print ("x1 =",x1)
+        
+        #sprawdzamy poprawność rozwiązania
+        Sprawdzam(x1,0,b,c)
+
+    else:
+        print("brak rozwiazań!")
+
 # funkcja sprawdza liczbę rozwiązań równania
 # kwadratowego podanego przez użytkownika
 def FunkcjaKwadratowa(a,b,c):
@@ -36,7 +53,15 @@ def FunkcjaKwadratowa(a,b,c):
     # sprawdzamy czy podane parametry odpowadają f(x)=0
     if a==b==c==0:
         print("oo wiele rozwiązań!")
+    elif a==0:
+        #######################
+        # funckcja kwadratowa
+        #######################
+        FunkcjaLiniowa(b,c)
     else:
+        #######################
+        # funckcja kwadratowa
+        #######################
         # obliczamy deltę
         delta = b**2 - 4 * a * c
         # pierwszy przypadek delta>0 -> 2 rozwiazania
@@ -69,16 +94,20 @@ def FunkcjaKwadratowa(a,b,c):
         else:
             print("brak rozwiązań!")
 
-    # pusta linijka
     print()
 
 def main():
 
     # testujemy: sprawdzamy czy wszystkie przypadki dzialaja
+    # przypadki kwadratowe
     FunkcjaKwadratowa(0,0,0)
     FunkcjaKwadratowa(1,-2,1)
     FunkcjaKwadratowa(1,-2,0)
     FunkcjaKwadratowa(1,0,1)
+   
+    # liniowe przypadki
+    FunkcjaKwadratowa(0,1,1)
+    FunkcjaKwadratowa(0,0,1)
 
 if __name__=="__main__":
     main()
