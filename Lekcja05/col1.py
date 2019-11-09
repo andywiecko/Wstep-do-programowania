@@ -7,7 +7,6 @@
 # Andrzej Więckowski
 # Old Man Willow, 09-11-2019
 
-import math
 Pole = lambda a,b,c: 2*(a*b+a*c+b*c)
 
 def Prostopadloscian():
