@@ -26,14 +26,15 @@ def PobierzLiczbe():
         print("Błędny format!")
         return PobierzLiczbe()
 
-def CzescUlamkowa():
-    liczba = PobierzLiczbe()
+def CzescUlamkowa(liczba):
     czescUlamkowa = liczba - math.floor(liczba)
-    print(f"Podano liczbę: {liczba:6.3f}")
-    print(f"Jej część ułamkowa wynosi: {czescUlamkowa:6.3f}")
+    return czescUlamkowa
 
 def main():
-    CzescUlamkowa()
+    liczba = PobierzLiczbe()
+    cz_ulamkowa = CzescUlamkowa(liczba)
+    print(f"Podano liczbę: {liczba:6.3f}")
+    print(f"Jej część ułamkowa wynosi: {cz_ulamkowa:6.3f}")
 
 if __name__=="__main__":
     main()
